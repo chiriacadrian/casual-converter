@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+    <title>Casual Converter</title>
+  </head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="column centered">
+        <h4>Choose what to convert</h4>
+        <div class="centered">
+          <a href="weight.html">
+            <button type="button" class="btn btn-light">Weight</button>
+          </a>
+          <a href="lenght.html">
+            <button type="button" class="btn btn-light">Lenght</button>
+          </a>
+          <a href="temperature.html">
+            <button type="button" class="btn btn-light">Temperature</button>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 offset-md-3" style="margin-top: 50px;">
+        <h1 class="display-4 text-center mb-3">Temperature Converter</h1>
+        <form>
+          <div class="form-group">
+            <input id="temperatureInput" type="number" class="form-control form-control-lg" placeholder="Enter celsius degrees...">
+          </div>
+        </form>
+        <div id="output">
+          <div class="card bg-primary mb-2">
+            <div class="card-body">
+              <h4>Fahrenheit:</h4>
+              <div id="fahrenheitOutput"></div>
+            </div>
+          </div>
+          <div class="card bg-primary mb-2">
+            <div class="card-body">
+              <h4>Kelvin:</h4>
+              <div id="kelvinOutput"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('output').style.visibility = 'hidden';
+    document.getElementById('temperatureInput').addEventListener('input', function (e) {
+      document.getElementById('output').style.visibility = 'visible';
+      if (document.getElementById('temperatureInput').value.length === 0) {
+        document.getElementById('output').style.visibility = 'hidden';
+      }
+      let t = e.target.value;
+      document.getElementById('fahrenheitOutput').innerHTML = ((+t * (9/5)) + 32).toFixed(2);
+      document.getElementById('kelvinOutput').innerHTML = (+t + 273.15).toFixed(2);
+    });
+  </script>
+</body>
+
+</html>

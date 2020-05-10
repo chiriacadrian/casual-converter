@@ -1,0 +1,16 @@
+{
+  "name": "casual_converter",
+  "version": "1.0.0",
+  "description": "A responsive casual converter that allows you to quickly convert weight, lenght and temperature into predefined units of measurement.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://chiriacadrian.github.io/casual-converter",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
